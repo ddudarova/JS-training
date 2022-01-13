@@ -9,7 +9,7 @@ first = second;
 document.write(first)
 
 //hometask point 4
-let dataTypesObject = {
+const dataTypesObject = {
     number: 55,
     string: 'Ivan',
     boolean: true,
@@ -19,7 +19,7 @@ let dataTypesObject = {
 console.log(dataTypesObject)
 
 //hometask point 5
-let isAdult = confirm('Are you an adult?');
+const isAdult = confirm('Are you an adult?');
 console.log(isAdult)
 
 //hometask point 6
@@ -34,20 +34,18 @@ let myAde = null;
 console.log(typeof myBirthYear, typeof isMarried, typeof myName, typeof mySurname, typeof myGroup, typeof myMiddleName, typeof myAde)
 
 //hometask point 7
-let login = prompt('Login', 'Ivan123');
+const login = prompt('Login', 'Ivan123');
 alert(login);
-let email = prompt('Email', 'Ivan123@gmail.com');
+const email = prompt('Email', 'Ivan123@gmail.com');
 alert(email);
-let password = prompt('Password', 'qwerty12345');
+const password = prompt('Password', 'qwerty12345');
 alert(password);
 alert('Dear ' + login + ', your email is ' + email + ', your password is ' + password)
 
 //hometask point 8
-let sec = 1;
-let min = sec * 60;
-let hour = min * 60;
-let day = hour * 24;
-let month = day * 30;
+const sec = 1;
+const min = sec * 60;
+const hour = min * 60;
+const day = hour * 24;
+const month = day * 30;
 document.write('There is ', hour, ' seconds in 1 hour, ', day, ' seconds in 1 day, ', 'and ', month, ' seconds in 1 30-days month')
-
-//console.log(hour, day, months)
