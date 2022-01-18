@@ -103,5 +103,4 @@ switch (true) {
     case curTime >= 17 && curTime < 23:
         console.log('Good evening');
         break
-
 }
