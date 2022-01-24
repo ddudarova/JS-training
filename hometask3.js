@@ -7,12 +7,15 @@ for (let i = 0; i < numbers.length; i++) {
 }
 console.log(result);
 
+const data = [2,3,4,5];
+
+let res = 1;
 let i = 0;
-while (i < numbers.length) {
-    result *= numbers[i];
+while (i < data.length) {
+    res *= data[i];
     i++;
 }
-console.log(result);
+console.log(res);
 
 //point2
 for(let count = 0; count < 16; count++) {
@@ -69,3 +72,4 @@ function ucFirst(str) {
     console.log(newStr);
 }
 ucFirst('this is string');
+
