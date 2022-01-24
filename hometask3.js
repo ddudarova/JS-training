@@ -1,4 +1,4 @@
-//point1
+// //point1
 const numbers = [2,3,4,5];
 
 let result = 1;
@@ -17,7 +17,7 @@ while (i < data.length) {
 }
 console.log(res);
 
-//point2
+// //point2
 for(let count = 0; count < 16; count++) {
     if (count % 2 === 0) {
         console.log(count + ' is even');
@@ -26,7 +26,7 @@ for(let count = 0; count < 16; count++) {
     }
 }
 
-//point3
+// //point3
 function getRandomInt(a, b) {
     let k = [];
     for (let i=a, t=b; i<t; i++) {
@@ -36,14 +36,14 @@ function getRandomInt(a, b) {
 }
 getRandomInt(1,500)
 
-//point4
+// //point4
 function findMin() {
     const showMin = Math.min(...arguments);
     console.log(showMin);
 }
 findMin(12, 14, 4, -4, 0.2, -12);
 
-//point5
+// //point5
 function findUnique(arr) {
     const result = [];
     for (let i of arr) {
@@ -60,7 +60,7 @@ function findUnique(arr) {
 console.log(findUnique([1, 2, 3, 4]));
 
 // point6
-function lastElem(a,b) {
+function lastElem(a,b=1) {
     let c = a.slice(-b);
     console.log(c);
 }
@@ -68,8 +68,11 @@ lastElem([3, 4, 10, -5],2);
 
 // point7
 function ucFirst(str) {
-    const newStr = str[0].toUpperCase() + str.slice(1);
-    console.log(newStr);
+    let str2 = ''
+    for (let i of str.split(' ')) {
+        str2 = str2 + String(i.replace(i[0], i[0].toUpperCase())) + " "
+    }
+    console.log(str2);
 }
 ucFirst('this is string');
 
