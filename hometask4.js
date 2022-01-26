@@ -72,3 +72,22 @@
 // }
 
 //point4
+function showUser(id) {
+    if (id >= 0) {
+        return {id: id};
+    } else {
+        throw new Error('ID must not be negative:' + id);
+    }
+}
+function showUsers(ids) {
+    const users = [];
+    for (const id of ids) {
+        users.push(showUser(id));
+    }
+    console.log(users);
+}
+try {
+    showUsers([1,2,3,5]);
+} catch (e){
+    console.log('Error: ' + e.message);
+}
