@@ -64,15 +64,15 @@ class Worker{
         const salary = this.dayRate * this.workingDays;
         console.log(this.fullName + ' ' + 'salary is ' + salary);
     }
-    _experience = 1.2;
+    #experience = 1.2;
     showSalaryWithExperience(){
-        return this.dayRate * this.workingDays * this._experience;
+        return this.dayRate * this.workingDays * this.#experience;
     }
     get experience() {
-        return this._experience;
+        return this.#experience;
     }
     set experience(value) {
-        this._experience = value;
+        this.#experience = value;
     }
 }
 
