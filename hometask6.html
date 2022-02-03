@@ -18,7 +18,7 @@
 <img class="image" src="dog.jpg">
 <script>
     let newElem = document.getElementsByClassName("image");
-    alert(newElem.innerHTML="dog.jpg");
+    alert(newElem.innerHTML="cat.jpg");
 </script>
 
 <!--point3-->
@@ -41,21 +41,22 @@
 
 <!--point4-->
 <h2>Drinks</h2>
-<ul>
-    <li>1. Coffee</li>
-    <li>2. Tea</li>
-    <li>3. Milk</li>
-    <li>4. Cola</li>
-    <li>5. Water</li>
+<ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
 </ul>
 <script>
-    let elements = document.querySelectorAll("ul li");
-    arr = []
-    for (let elem of elements){
-        arr.push(elem.innerHTML)
-    }
-    alert(arr.join(', '))
-    alert(arr.join("\n"));
+    //variant1
+    const elements = document.getElementById("list").children;
+    //variant2
+    // const elements = document.querySelectorAll("ul li");
+    const arr = [elements[0].innerHTML, elements[4].innerHTML, elements[1].innerHTML, elements[3].innerHTML, elements[2].innerHTML];
+    alert(arr.join(', '));
+
+
 </script>
 
 <!--point5-->
