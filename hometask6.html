@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--point1-->
+<div id="test">First</div>
+<script>
+    document.getElementById("test").innerHTML="Last";
+    //
+    let newElem = document.querySelector("div");
+    newElem.innerHTML="Last";
+</script>
+
+<!--point2-->
+<img class="image" src="dog.jpg">
+<script>
+    let newElem = document.getElementsByClassName("image");
+    alert(newElem.innerHTML="dog.jpg");
+</script>
+
+<!--point3-->
+<h2>Article header</h2>
+<div id="text">
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <p>Third paragraph</p>
+</div>
+<p>Another text</p>
+
+<script>
+    let elements = document.querySelectorAll("div p");
+    i = 0;
+    for (let elem of elements){
+        i++
+        alert("Selector text " + i + ": " + elem.innerHTML);
+    }
+</script>
+
+<!--point4-->
+<h2>Drinks</h2>
+<ul>
+    <li>1. Coffee</li>
+    <li>2. Tea</li>
+    <li>3. Milk</li>
+    <li>4. Cola</li>
+    <li>5. Water</li>
+</ul>
+<script>
+    let elements = document.querySelectorAll("ul li");
+    arr = []
+    for (let elem of elements){
+        arr.push(elem.innerHTML)
+    }
+    alert(arr.join(', '))
+    alert(arr.join("\n"));
+</script>
+
+<!--point5-->
+<h1>I'am a big header!!!</h1>
+<div id="myDiv">
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <p>Third paragraph</p>
+    <p>Fourth paragraph</p>
+</div>
+<ul id="myList">
+    <li>Make</li>
+    <li>me</li>
+    <li>horizontal!</li>
+</ul>
+<span>Make me invisible, please!</span>
+<script>
+    document.getElementsByTagName("h1")[0].style.backgroundColor = "green";
+    document.getElementById("myDiv").children[0].style.fontWeight = "bold";
+    document.getElementById("myDiv").children[1].style.fontWeight = "100";
+    document.getElementById("myDiv").children[1].style.color = "red";
+    document.getElementById("myDiv").children[2].style.textDecoration = "underline";
+    document.getElementById("myDiv").children[3].style.font = "italic 100 20px helvetica,serif";
+    document.getElementById("myList").style.listStyleType = "none";
+    document.getElementById("myList").style.display = "flex";
+    document.getElementsByTagName("span")[0].style.visibility = "hidden";
+</script>
+
+<!--point6-->
+<input type="text" id="input1" value="Text1">
+<input type="text" id="input2" value="Text2">
+<button id="swap">swap</button>
+<script>
+    let elem1 = document.getElementById("input1");
+    let elem2 = document.getElementById("input2");
+    document.getElementById("swap").onclick = function () {
+        let newElem1 = elem1.value;
+        elem1.value = elem2.value;
+        elem2.value = newElem1;
+    }
+    let newValue1 = prompt("Provide any value for first field");
+    let newValue2 = prompt("Provide any value for second field");
+    elem1.value = newValue1;
+    elem2.value = newValue2;
+</script>
+
+<!--point7-->
+
+<script>
+   const newMain = document.createElement("main");
+   newMain.className = "mainClass check item";
+   const newDiv = document.createElement("div");
+   newDiv.id = "myDiv";
+   const newPar = document.createElement("p");
+   const newText = document.createTextNode("First Paragraph");
+   newPar.appendChild(newText);
+   newDiv.appendChild(newPar);
+   newMain.appendChild(newDiv);
+   document.body.appendChild(newMain);
+
+
+</script>
+
+</body>
+</html>
