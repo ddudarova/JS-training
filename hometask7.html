@@ -26,5 +26,149 @@
     setTimeout(closeWindow, 6000);
 </script>
 
+<!--point2-->
+<p id ='text'>I learning JavaScript events!</p>
+<div>
+    <button onclick="changeCss()" >Change style!</button>
+</div>
+
+<script>
+    function changeCss(){
+        document.getElementById('text').style.color = 'orange';
+        document.getElementById('text').style.font = '20px Comic Sans MS';
+    }
+</script>
+
+<!--point3-->
+<button id="button1" >Click to make page blue</button>
+<button id="button2" >Double-click to make page pink</button>
+<button id="button3" >Click and hold to make page brown</button>
+<a id="link" href="#">Hover over to make page yellow</a>
+
+<script>
+    const button1 = document.getElementById("button1");
+    const button2 = document.getElementById("button2");
+    const button3 = document.getElementById("button3");
+    const link = document.getElementById("link");
+    button1.onclick = function changeToBlue(){
+        document.body.style.backgroundColor = "blue";
+    }
+    button2.ondblclick = function changeToPink(){
+        document.body.style.backgroundColor = "pink";
+    }
+    function changeToBrown(){
+        document.body.style.backgroundColor = "brown";
+    }
+    function changeToWhite(){
+        document.body.style.backgroundColor = "white";
+    }
+    button3.addEventListener("mousedown", changeToBrown);
+    button3.addEventListener("mouseup", changeToWhite);
+
+    link.onmouseover = function changeToYellow (){
+        document.body.style.backgroundColor = "yellow";
+    }
+</script>
+
+point4
+<select name="Users" id="users">
+    <option>Peter</option>
+    <option>John</option>
+    <option>Alise</option>
+    <option>Alex</option>
+    <option>Iren</option>
+</select>
+<button id="btn">Choose and Delete</button>
+<script>
+    const btn = document.getElementById("btn");
+    const list = document.getElementById("users");
+
+    btn.onclick = function deleteUser() {
+        list.options[list.selectedIndex].remove();
+    }
+</script>
+
+<!--point5-->
+<div id="div">
+    <button id="button" >Live button!</button>
+</div>
+<script>
+    const button = document.getElementById("button");
+
+    button.onclick = function onClick(){
+        const newPar = document.createElement("p");
+        const newText = document.createTextNode("I was pressed!")
+        newPar.appendChild(newText);
+        document.getElementById("div").appendChild(newPar);
+    };
+    button.onmouseover = function onHover(){
+        const newPar = document.createElement("p");
+        const newText = document.createTextNode("Mouse on me!")
+        newPar.appendChild(newText);
+        document.getElementById("div").appendChild(newPar);
+    };
+    button.onmouseout = function hoverOut(){
+        const newPar = document.createElement("p");
+        const newText = document.createTextNode("Mouse is not on me!")
+        newPar.appendChild(newText);
+        document.getElementById("div").appendChild(newPar);
+    };
+</script>
+
+<!--point6-->
+<script>
+    window.addEventListener('resize',function(){
+        const height = document.documentElement.clientHeight;
+        const width = document.documentElement.clientWidth;
+        document.body.innerHTML = "Width: " + width + ", " + "Height: " + height;
+    });
+</script>
+
+<!--point7-->
+<select name="country" id="country">
+    <option value="ger">Germany</option>
+    <option value="usa">USA</option>
+    <option value="ukr">Ukraine</option>
+</select>
+
+<select name="cities" id="cities"></select>
+<p id="par"></p>
+
+<script>
+    const countryList = document.getElementById("country");
+    const citiesList = document.getElementById("cities");
+    const par = document.getElementById("par");
+
+    print();
+
+    function print() {
+        const val = this.value || countryList.options[countryList.selectedIndex].value;
+
+        switch (val) {
+            case "ger":
+                citiesList.options[0] = new Option("Berlin");
+                citiesList.options[1] = new Option("Hamburg");
+                citiesList.options[2] = new Option("Frankfurt");
+                break;
+            case "usa":
+                citiesList.options[0] = new Option("Boston");
+                citiesList.options[1] = new Option("New-York");
+                citiesList.options[2] = new Option("Chicago");
+                break;
+            case "ukr":
+                citiesList.options[0] = new Option("Kyiv");
+                citiesList.options[1] = new Option("Lviv");
+                citiesList.options[2] = new Option("Dnypro");
+        }
+
+        par.innerHTML = countryList.options[countryList.selectedIndex].text + " "
+            + citiesList.options[citiesList.selectedIndex].text;
+    }
+
+
+    countryList.onchange = print;
+    citiesList.onchange = print;
+</script>
+
 </body>
 </html>
