@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hometask 7</title>
+</head>
+<body>
+<script>
+    //point1
+    const firstWindow = window.open('', 'window', 'width=300,height=300,left=700,top=200');
+
+    function resizeWindow() {
+            firstWindow.resizeBy(200, 200);
+    }
+
+    function moveWindow(){
+        firstWindow.moveTo(200,200);
+    }
+
+    function closeWindow(){
+        firstWindow.close();
+    }
+
+    setTimeout(resizeWindow, 2000);
+    setTimeout(moveWindow, 4000);
+    setTimeout(closeWindow, 6000);
+</script>
+
+</body>
+</html>
