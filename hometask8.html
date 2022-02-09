@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hw8</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<!--<h2 class="head">header1</h2>-->
+<!--<h2 class="head">header2 <span class="inner">inner elem1</span></h2>-->
+<!--<h2>header3</h2>-->
+<!--<h2 class="head">header4<span>inner elem2</span></h2>-->
+<!--<h2>header5</h2>-->
+
+<!--<script>-->
+<!--    const firstElem = $(".head");-->
+<!--    firstElem.css("background", "green");-->
+<!--    $(".inner").css("font-size", "35px");-->
+<!--</script>-->
+
+<form name="frmChk" id="frmChk">
+    <p>Checkmark me</p>
+    <input type="checkbox" name="chk1">
+    <input type="checkbox" name="chk2">
+    <input type="checkbox" name="chk3">
+    <input type="checkbox" name="chk4">
+    <input type="checkbox" name="chk5">
+    <input type="checkbox" name="chk6">
+</form>
+
+<script>
+    const elems = $('input');
+
+    elems.each(function (index, elem) {
+       $(elem).on('change', checkB);
+    });
+
+    function checkB(){
+        const checked = $( "input:checked" ).length;
+        const notChecked = $( "input:not(:checked)" );
+        if (checked === 3){
+            notChecked.each(function (i, elem) {
+                $(elem).prop( "disabled", true);
+            });
+        } else {
+            notChecked.each(function (i, elem) {
+                $(elem).prop( "disabled", false);
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
