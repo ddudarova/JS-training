@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task</title>
+</head>
+<body>
+<button id="btn" onclick="downloadBooks()">Download books</button>
+<ul id="authors"></ul>
+<script>
+    function downloadBooks() {
+        const ajaxRequest = new XMLHttpRequest();
+        ajaxRequest.open('GET', 'books.json', true);
+        ajaxRequest.onreadystatechange = function() {
+            const books = JSON.parse(ajaxRequest.responseText);
+            if (ajaxRequest.readyState != 4) {
+                return;
+            } else {
+                document.getElementById('btn').remove();
+                const elem = document.getElementById('authors');
+
+                for (let book of books) {
+                    const li = document.createElement("li");
+                    li.innerHTML = book.author;
+                    elem.appendChild(li);
+                }
+            }
+        }
+            ajaxRequest.send();
+    }
+</script>
+
+</body>
+</html>
